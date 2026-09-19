@@ -1,0 +1,217 @@
+:root{
+  --amber-100:#F7E9D7; --amber-600:#9B521C; --amber-700:#7C3E16; --amber-800:#5E2E12;
+  --verdigris-100:#E1EDEA; --verdigris-600:#386859; --verdigris-700:#2A4F44;
+  --neutral-100:#F7F6F3; --neutral-200:#ECEAE5; --neutral-300:#D9D6CF; --neutral-400:#B7B2A8; --neutral-500:#918B7F; --neutral-600:#6C665A; --neutral-700:#504B41; --neutral-900:#1C1B19;
+  --moss-100:#E5EFE1; --moss-800:#1F3C18;
+  --gold-100:#FBF0CE; --gold-800:#543911;
+
+  --color-brand-primary:var(--amber-600); --color-brand-primary-hover:var(--amber-700);
+  --color-brand-secondary:var(--verdigris-600);
+  --color-text-primary:var(--neutral-900); --color-text-secondary:var(--neutral-600); --color-text-on-brand:var(--neutral-100);
+  --color-surface-canvas:#F3F4F2; --color-surface-raised:#FBFBFA; --color-surface-raised-rgb:251,251,250;
+  --color-border-default:var(--neutral-300);
+  --color-state-success:#3B6F2E; --color-state-success-text:var(--moss-800); --color-state-success-bg:var(--moss-100);
+  --focus-ring:0 0 0 3px rgba(155,82,28,.35);
+
+  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-ui:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --color-brand-primary:#D69357; --color-brand-primary-hover:#BC722E;
+    --color-brand-secondary:#69A594;
+    --color-text-primary:#ECE7DF; --color-text-secondary:#A09A90; --color-text-on-brand:var(--neutral-100);
+    --color-surface-canvas:#131211; --color-surface-raised:#1B1A18; --color-surface-raised-rgb:27,26,24;
+    --color-border-default:#2F2D29;
+    --color-state-success:#74AF61; --color-state-success-text:#9DC98D; --color-state-success-bg:#12240E;
+    --focus-ring:0 0 0 3px rgba(214,147,87,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --color-brand-primary:#D69357; --color-brand-primary-hover:#BC722E;
+  --color-brand-secondary:#69A594;
+  --color-text-primary:#ECE7DF; --color-text-secondary:#A09A90; --color-text-on-brand:var(--neutral-100);
+  --color-surface-canvas:#131211; --color-surface-raised:#1B1A18; --color-surface-raised-rgb:27,26,24;
+  --color-border-default:#2F2D29;
+  --color-state-success:#74AF61; --color-state-success-text:#9DC98D; --color-state-success-bg:#12240E;
+  --focus-ring:0 0 0 3px rgba(214,147,87,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{background:var(--color-surface-canvas);color:var(--color-text-primary);font:400 16px/1.6 var(--font-body);margin:0}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--color-brand-primary);outline-offset:2px;border-radius:2px}
+
+/* shared nav — solid dark bar, centered wordmark, tracked uppercase links (marcpaquin.net-style) */
+.site-nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,56px);padding:20px clamp(20px,5vw,64px);background:#0B0A09;border-bottom:1px solid #232019;flex-wrap:wrap}
+.wordmark{font:400 19px/1 var(--font-display);font-style:italic;letter-spacing:.01em;color:#F2EEE6;order:2;white-space:nowrap}
+img.wordmark,.wordmark img{height:26px;width:auto;display:block}
+.foot-brand img.wordmark{height:30px;order:0}
+.nav-links{display:flex;gap:clamp(14px,2.6vw,30px);font:500 11.5px/1 var(--font-ui);letter-spacing:.12em;text-transform:uppercase;flex-wrap:wrap}
+.nav-links.left{order:1;justify-content:flex-end}
+.nav-links.right{order:3}
+.nav-links a{color:#A79F91;padding:6px 2px;border-bottom:2px solid transparent}
+.nav-links a.active{color:#F2EEE6;border-color:var(--color-brand-primary)}
+.nav-links a:hover{color:#F2EEE6}
+/* Phones: logo on its own centered row, all links centered together on the row
+   below it — wraps instead of scrolling sideways, so it always stays centered. */
+@media (max-width:640px){
+  .site-nav{gap:4px 14px;padding:14px 12px}
+  .site-nav .wordmark{order:1;flex-basis:100%}
+  .site-nav .wordmark img{height:22px;margin-inline:auto}
+  .nav-links{gap:12px;font-size:10.5px;letter-spacing:.04em;justify-content:center}
+  .nav-links.left,.nav-links.right{order:2}
+  .nav-links a{padding:6px 0;white-space:nowrap}
+}
+
+/* generic */
+.shell{max-width:1180px;margin-inline:auto;padding-inline:clamp(20px,5vw,64px)}
+.btn{font:600 14px/1 var(--font-body);border-radius:8px;padding:13px 22px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn.primary{background:var(--color-brand-primary);color:var(--color-text-on-brand)}
+.btn.primary:hover{background:var(--color-brand-primary-hover)}
+.btn.ghost{background:transparent;border-color:var(--color-border-default);color:var(--color-text-primary)}
+.btn.ghost:hover{background:var(--color-surface-raised)}
+
+/* ---------------- CINEMA HERO ---------------- */
+/* Deliberately theme-independent — a fixed dark opener regardless of site theme. */
+.cinema{position:relative;height:100vh;height:100svh;min-height:520px;background:#0B0A09;overflow:hidden}
+.cinema-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.cinema-violin{max-height:82vh;max-width:92vw;width:auto;height:auto;transform:scale(1.7);transform-origin:50% 46%;filter:drop-shadow(0 50px 90px rgba(0,0,0,.55));opacity:1;will-change:transform,opacity}
+.cinema-title{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);text-align:center;color:#F2EEE6;opacity:1;pointer-events:none;width:100%}
+.cinema-title h1{font:400 clamp(26px,4vw,42px)/1.15 var(--font-display);margin:0;letter-spacing:-.01em}
+.cinema-title span{display:block;font:500 11px/1 var(--font-ui);letter-spacing:.2em;text-transform:uppercase;color:#D69357;margin-top:16px}
+.cinema-scrollcue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#8A8478;font:500 10.5px/1 var(--font-ui);letter-spacing:.16em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cinema-scrollcue i{width:3px;height:46px;border-radius:3px;background:rgba(214,147,87,.22);display:block;position:relative;overflow:hidden;animation:cue-glow .8s ease 2s forwards}
+.cinema-scrollcue::after{content:"";width:12px;height:12px;margin-top:-22px;border:solid rgba(214,147,87,.35);border-width:0 3px 3px 0;transform:rotate(45deg);animation:cue-glow .8s ease 2s forwards,cue-arrow .8s ease 2s forwards}
+/* If nobody has scrolled after 2s, the cue lights up and a highlight runs down the line.
+   Scrolling fades the whole cue out (GSAP), so it only ever shows to someone who is waiting. */
+.cinema-scrollcue{animation:cue-wake .8s ease 2s forwards}
+.cinema-scrollcue i::after{content:"";position:absolute;left:0;top:-45%;width:100%;height:45%;background:#D69357;animation:cue-drip 1.6s cubic-bezier(.6,0,.4,1) 2s infinite}
+@keyframes cue-wake{to{color:#F2EEE6;letter-spacing:.24em}}
+@keyframes cue-drip{to{top:100%}}
+@keyframes cue-glow{to{filter:drop-shadow(0 0 6px #D69357)}}
+@keyframes cue-arrow{to{border-color:#D69357}}
+@media (prefers-reduced-motion:reduce){ .cinema-scrollcue{display:none} .cinema-violin{transform:none} }
+
+/* ---- About: full-bleed split, dark photo half / cream text half (marcpaquin.net bio section) ---- */
+.about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--amber-100)}
+:root:not([data-theme="light"]) .about-split,:root[data-theme="dark"] .about-split{background:#241E14}
+.about-split .ph{background:#0B0A09;display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vw,56px)}
+.about-split .ph img{max-width:100%;max-height:min(85vh,500px);width:auto;height:auto;border-radius:4px}
+.about-split .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,6vw,80px)}
+.about-split .lede{font-size:clamp(16px,1.6vw,18.5px);color:var(--color-text-secondary);max-width:52ch;margin:0 0 28px;text-wrap:balance}
+.about-split .ctas{display:flex;flex-wrap:wrap;gap:14px}
+@media (max-width:760px){ .about-split{grid-template-columns:1fr} }
+
+/* ---- Page banner: narrow full-bleed photo strip as a page header ---- */
+.page-banner{height:clamp(110px,15vh,160px);overflow:hidden;background:#0B0A09;display:flex;justify-content:center}
+/* Narrower than the screen so less of the photo is cropped away; the edges fade into the black bar. */
+.page-banner img{width:min(100%,600px);height:100%;object-fit:cover;object-position:center 50%;opacity:.9;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
+
+/* ---- Section heading: centered, uppercase, tracked, small divider (marcpaquin.net signature) ---- */
+.section{padding-block:clamp(56px,8vw,92px)}
+.section-head{text-align:center;margin-bottom:clamp(36px,5vw,56px)}
+.section-head h2{font:300 clamp(26px,3.6vw,38px)/1.2 var(--font-body);margin:0;text-wrap:balance;letter-spacing:.08em;text-transform:uppercase}
+.section-head .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px}
+.section-head .divider i{width:44px;height:1px;background:var(--color-brand-primary)}
+/* The logo is a solid black shape on transparency, so it is used as a mask and
+   painted with the brand colour — that way it stays visible on light and dark. */
+.section-head .divider .mark{width:26px;height:26px;flex:none;display:block;background:var(--color-brand-primary);
+  -webkit-mask:url(photos/brand/logo-black.png) center/contain no-repeat;
+          mask:url(photos/brand/logo-black.png) center/contain no-repeat}
+.inst-band .divider i,.inst-band .divider .mark{background:#D69357}
+.section-head-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:16px 28px;margin-top:14px}
+.section-head-row a{font:600 12px/1 var(--font-ui);letter-spacing:.08em;text-transform:uppercase;color:var(--color-brand-secondary)}
+
+/* ---- Instruments: black full-bleed, tight photo grid, plain caption (no cards) ---- */
+.inst-band{background:#0B0A09}
+.inst-band .section-head h2{color:#F2EEE6}
+.inst-band .section-head-row a{color:#D69357}
+.inst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px 16px;background:#0B0A09}
+.inst-card{display:block;position:relative}
+.inst-card .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.inst-card .ph{aspect-ratio:2/3;max-height:70vh;overflow:hidden;background:#0B0A09}
+.inst-card .ph img{width:100%;height:100%;object-fit:contain;transition:transform .5s}
+.inst-card:hover .ph img{transform:scale(1.05)}
+.inst-card .cap{padding:20px 4px 8px;text-align:center;color:#CFC8BC;font:400 italic 14.5px/1.4 var(--font-ui)}
+@media (max-width:700px){ .inst-grid{grid-template-columns:1fr;gap:36px} }
+
+/* ---- Testimonials: centered carousel, name above quote (marcpaquin.net testimonials) ---- */
+.quote-block{background:var(--color-surface-raised);border-top:1px solid var(--color-border-default);border-bottom:1px solid var(--color-border-default)}
+.quote-inner{max-width:760px;margin-inline:auto;padding-block:clamp(56px,8vw,96px);text-align:center}
+.quote-author-name{font:600 17px/1 var(--font-body);margin:0 0 6px}
+.quote-author-role{display:block;font:400 12.5px/1.6 var(--font-ui);letter-spacing:.03em;color:var(--color-text-secondary);max-width:70ch;margin:0 auto 28px}
+.q-slide{display:none}
+.q-slide.active{display:block}
+.q-slide blockquote{font:400 italic clamp(17px,1.9vw,20px)/1.65 var(--font-display);margin:0;text-wrap:balance;color:var(--color-text-primary);max-width:62ch;margin-inline:auto}
+.quote-nav{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:36px}
+.q-arrow{width:36px;height:36px;border-radius:50%;border:1px solid var(--color-border-default);background:transparent;color:var(--color-text-primary);font:400 17px/1 var(--font-body);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none}
+.q-arrow:hover{background:var(--color-surface-canvas)}
+.q-dots{display:flex;gap:8px}
+.q-dots button{width:7px;height:7px;border-radius:50%;padding:0;border:0;background:var(--color-border-default);cursor:pointer}
+.q-dots button.active{background:var(--color-brand-primary)}
+
+
+.contact-cta{padding-block:clamp(56px,9vw,100px)}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:start}
+.contact-grid .ctas{display:flex;flex-wrap:wrap;gap:14px}
+.detail-list{display:grid;gap:0;font-size:14.5px}
+.detail-list div{display:grid;grid-template-columns:90px 1fr;gap:14px;padding-block:14px;border-top:1px solid var(--color-border-default)}
+.detail-list div:first-child{border-top:0}
+.detail-list b{font:600 11px/1.4 var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--color-text-secondary)}
+
+/* ---- Footer: dark 4-column (marcpaquin.net-style) ---- */
+.site-footer{background:#0B0A09;color:#A79F91}
+.foot-grid{padding-block:clamp(40px,6vw,64px);display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.foot-brand span:last-child{font:500 11px/1 var(--font-ui);letter-spacing:.1em;text-transform:uppercase;color:#6E685C}
+.foot-col{display:flex;flex-direction:column;gap:12px;font-size:13.5px}
+.foot-col b{font:600 11px/1 var(--font-ui);letter-spacing:.08em;text-transform:uppercase;color:#F2EEE6;margin-bottom:2px}
+.foot-col a{color:#A79F91}
+.foot-col a:hover{color:#F2EEE6}
+.foot-bottom{padding-block:18px;border-top:1px solid #232019;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font:400 12px/1.4 var(--font-ui);color:#6E685C}
+@media (max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr} }
+
+@media (max-width:760px){
+  .contact-grid{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ---------------- INSTRUMENT PAGE ---------------- */
+.crumb{padding-block:22px;font:500 12.5px/1 var(--font-ui);color:var(--color-text-secondary)}
+.crumb a{color:var(--color-brand-secondary)}
+.inst-detail{padding-block:0 clamp(56px,8vw,92px)}
+.detail-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:start}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gallery img{width:100%;height:100%;object-fit:contain;border-radius:12px;background:#0B0A09}
+.gallery img{cursor:zoom-in}
+#lightbox{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;overflow:hidden}
+#lightbox::backdrop{background:rgba(0,0,0,.94)}
+#lightbox img{max-width:96vw;max-height:94vh;object-fit:contain;cursor:zoom-out}
+.lb-btn{position:fixed;width:48px;height:48px;border-radius:50%;border:1px solid rgba(242,238,230,.3);background:rgba(11,10,9,.65);color:#F2EEE6;font:300 30px/1 var(--font-ui);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0 0 3px}
+.lb-btn:hover,.lb-btn:focus-visible{border-color:#D69357;color:#D69357}
+.lb-close{top:16px;right:16px}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%)}
+.lb-prev{left:16px}
+.lb-next{right:16px}
+.gallery .front{grid-column:1/-1;height:min(52vh,480px)}
+.gallery .back{height:min(40vh,360px)}
+@media (max-width:760px){ .gallery .front{height:min(42vh,380px)} .gallery .back{height:min(30vh,260px)} }
+.panel h1{font:400 clamp(28px,3.6vw,38px)/1.15 var(--font-display);margin:14px 0 12px;text-wrap:balance}
+.spec-list{display:grid;gap:0;margin:20px 0 26px;font-size:14.5px}
+.spec-list div{display:grid;grid-template-columns:120px 1fr;gap:14px;padding-block:13px;border-top:1px solid var(--color-border-default)}
+.spec-list div:first-child{border-top:0}
+.spec-list b{font:600 11px/1.4 var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--color-text-secondary)}
+.spec-list span.mono{font-family:var(--font-ui)}
+.ship-row{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--color-text-secondary);margin-bottom:24px}
+.inst-contact{margin:0 0 22px;font-size:14.5px;color:var(--color-text-secondary)}
+.inst-contact a{color:var(--color-brand-primary);font-weight:600;white-space:nowrap}
+.inst-contact a:hover{color:var(--color-brand-primary-hover)}
+.tt-wrap{position:relative;display:inline-flex}
+.tt-trigger{width:19px;height:19px;border-radius:50%;border:1px solid var(--color-border-default);color:var(--color-text-secondary);font:600 11px/1 var(--font-ui);display:inline-flex;align-items:center;justify-content:center}
+.tt-bubble{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:var(--neutral-900);color:var(--neutral-100);font:400 12.5px/1.4 var(--font-body);padding:8px 11px;border-radius:8px;width:190px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:2}
+.tt-wrap:hover .tt-bubble,.tt-wrap:focus-within .tt-bubble,.tt-wrap.open .tt-bubble{opacity:1}
+.panel .ctas{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){ .detail-grid{grid-template-columns:minmax(0,1fr)} }
