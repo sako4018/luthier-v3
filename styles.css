@@ -99,8 +99,8 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 /* ---- About: full-bleed split, dark photo half / cream text half (marcpaquin.net bio section) ---- */
 .about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--amber-100)}
 :root:not([data-theme="light"]) .about-split,:root[data-theme="dark"] .about-split{background:#241E14}
-.about-split .ph{background:#0B0A09;display:flex;align-items:center;justify-content:center;padding:clamp(24px,4vw,56px)}
-.about-split .ph img{max-width:100%;max-height:min(85vh,500px);width:auto;height:auto;border-radius:4px}
+.about-split .ph{background:#0B0A09;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,28px)}
+.about-split .ph img{max-width:100%;max-height:min(90vh,640px);width:auto;height:auto;border-radius:4px}
 .about-split .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,6vw,80px)}
 .about-split .lede{font-size:clamp(16px,1.6vw,18.5px);color:var(--color-text-secondary);max-width:52ch;margin:0 0 28px;text-wrap:balance}
 .about-split .ctas{display:flex;flex-wrap:wrap;gap:14px}
