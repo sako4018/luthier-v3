@@ -83,6 +83,7 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .cinema-title{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);text-align:center;color:#F2EEE6;opacity:1;pointer-events:none;width:100%}
 .cinema-title h1{font:400 clamp(26px,4vw,42px)/1.15 var(--font-display);margin:0;letter-spacing:-.01em}
 .cinema-title span{display:block;font:500 11px/1 var(--font-ui);letter-spacing:.2em;text-transform:uppercase;color:#D69357;margin-top:16px}
+.cinema-title .cinema-name-bg{font:400 clamp(13px,1.4vw,16px)/1 var(--font-display);color:#A79F91;margin:6px 0 0;opacity:.85}
 .cinema-scrollcue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#8A8478;font:500 10.5px/1 var(--font-ui);letter-spacing:.16em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
 .cinema-scrollcue i{width:3px;height:46px;border-radius:3px;background:rgba(214,147,87,.22);display:block;position:relative;overflow:hidden;animation:cue-glow .8s ease 2s forwards}
 .cinema-scrollcue::after{content:"";width:12px;height:12px;margin-top:-22px;border:solid rgba(214,147,87,.35);border-width:0 3px 3px 0;transform:rotate(45deg);animation:cue-glow .8s ease 2s forwards,cue-arrow .8s ease 2s forwards}
@@ -100,7 +101,7 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--amber-100)}
 :root:not([data-theme="light"]) .about-split,:root[data-theme="dark"] .about-split{background:#241E14}
 .about-split .ph{background:#0B0A09;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,28px)}
-.about-split .ph img{width:min(100%,480px);max-height:min(90vh,640px);height:auto;border-radius:4px}
+.about-split .ph img{max-width:min(100%,480px);max-height:min(90vh,640px);width:auto;height:auto;border-radius:4px}
 .about-split .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,6vw,80px)}
 .about-split .lede{font-size:clamp(16px,1.6vw,18.5px);color:var(--color-text-secondary);max-width:52ch;margin:0 0 28px;text-wrap:balance}
 .about-split .ctas{display:flex;flex-wrap:wrap;gap:14px}
