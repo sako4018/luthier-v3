@@ -234,5 +234,5 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .svc p{margin:0;font-size:16px;line-height:1.65;color:var(--color-text-secondary)}
 .svc-contact{max-width:720px;margin:26px auto 0;text-align:center}
 .svc-list > p{margin:0 0 18px;font-size:16px;line-height:1.7;color:var(--color-text-secondary)}
-.page-banner.big{height:100vh;height:100svh;min-height:420px}
-.page-banner.big img{width:100%;object-position:center 40%;opacity:1;-webkit-mask-image:none;mask-image:none}
+.page-banner.big{height:auto;padding-top:clamp(16px,3vw,32px)}
+.page-banner.big img{width:auto;height:auto;max-width:min(100% - 32px,900px);max-height:calc(100svh - 140px);border-radius:12px;opacity:1;-webkit-mask-image:none;mask-image:none}
