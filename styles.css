@@ -156,6 +156,7 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 /* ---- Testimonials: centered carousel, name above quote (marcpaquin.net testimonials) ---- */
 .quote-block{background:var(--color-surface-raised);border-top:1px solid var(--color-border-default);border-bottom:1px solid var(--color-border-default)}
 .quote-inner{max-width:760px;margin-inline:auto;padding-block:clamp(56px,8vw,96px);text-align:center}
+.quote-photo{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 20%;margin:0 auto 14px}
 .quote-author-name{font:600 17px/1 var(--font-body);margin:0 0 6px}
 .quote-author-role{display:block;font:400 12.5px/1.6 var(--font-ui);letter-spacing:.03em;color:var(--color-text-secondary);max-width:70ch;margin:0 auto 28px}
 .q-slide{display:none}
