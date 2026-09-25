@@ -236,3 +236,18 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .svc-list > p{margin:0 0 18px;font-size:16px;line-height:1.7;color:var(--color-text-secondary)}
 .page-banner.big{height:auto;padding-top:clamp(16px,3vw,32px)}
 .page-banner.big img{width:auto;height:auto;max-width:min(100% - 32px,900px);max-height:calc(100svh - 140px);border-radius:12px;opacity:1;-webkit-mask-image:none;mask-image:none}
+
+/* ---- Phones ---- */
+@media (max-width:640px){
+  /* flag sits on the logo row, top-right, so it never covers a menu link */
+  .lang-toggle{top:12px;transform:none}
+}
+@media (max-width:760px){
+  /* header photos: whole picture instead of a cropped strip */
+  .page-banner{height:auto}
+  .page-banner img{width:100%;height:auto;-webkit-mask-image:none;mask-image:none}
+}
+@media (max-width:480px){
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  .foot-col a{overflow-wrap:anywhere}
+}
