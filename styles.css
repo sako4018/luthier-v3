@@ -266,3 +266,12 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
   .nav-links.left{justify-content:flex-end}
   .nav-links.right{justify-content:flex-start;padding-right:36px}
 }
+
+/* Phone: contact block and footer, tidy stacked layout */
+@media (max-width:760px){
+  .contact-grid .ctas{flex-direction:column}
+  .contact-grid .btn{justify-content:center;width:100%;overflow-wrap:anywhere;text-align:center}
+  .detail-list div{grid-template-columns:minmax(0,1fr);gap:4px}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+  .foot-brand,.foot-col:nth-child(2){grid-column:1/-1;align-items:center;text-align:center}
+}
