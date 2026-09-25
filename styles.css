@@ -66,6 +66,8 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .nav-links.right{order:3}
 .nav-links a{color:#A79F91;padding:6px 2px;border-bottom:2px solid transparent}
 .nav-links a.active{color:#F2EEE6;border-color:var(--color-brand-primary)}
+.site-nav .wordmark{padding:4px 2px;border-bottom:2px solid transparent}
+.site-nav .wordmark.active{border-color:var(--color-brand-primary)}
 .nav-links a:hover{color:#F2EEE6}
 /* Phones: logo on its own centered row, all links centered together on the row
    below it — wraps instead of scrolling sideways, so it always stays centered. */

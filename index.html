@@ -303,7 +303,7 @@
 <script>
 (function(){
   try{
-    var navLinks = document.querySelectorAll('.site-nav .nav-links a');
+    var navLinks = document.querySelectorAll('.site-nav .nav-links a, .site-nav .wordmark');
     var sections = ['cinema','about','instruments','testimonials','contact-home']
       .map(function(id){ return document.getElementById(id); })
       .filter(Boolean);
@@ -311,7 +311,7 @@
     var nav = document.querySelector('.site-nav');
 
     function linkFor(id){
-      if(id === 'cinema' || id === 'about') id = '';
+      if(id === 'cinema' || id === 'about') return document.querySelector('.site-nav .wordmark');
       for(var i = 0; i < navLinks.length; i++){
         var hash = navLinks[i].getAttribute('href').split('#')[1] || '';
         if(hash === id) return navLinks[i];
