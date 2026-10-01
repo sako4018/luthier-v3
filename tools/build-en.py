@@ -15,19 +15,19 @@ BASE = "https://bulgarian-violins.com/"
 
 EN = {
     "index.html": (
-        "Stepan Demirdjian — Violin Maker in Plovdiv, Bulgaria | Handmade Violins & Violas",
+        "Stepan Demirdjian — Violin Maker, Plovdiv",
         "Handmade violins and violas by luthier Stepan Demirdjian in Plovdiv, Bulgaria. Instruments made to order, repair and restoration of string instruments.",
     ),
     "about.html": (
-        "About — Stepan Demirdjian, Violin Maker in Plovdiv, Bulgaria",
+        "About — Stepan Demirdjian, Violin Maker",
         "Stepan Demirdjian, luthier in Plovdiv, Bulgaria. A workshop for making, repairing and restoring violins and violas.",
     ),
     "instrument.html": (
-        "Handmade Violins & Violas — Stepan Demirdjian, Luthier, Bulgaria",
+        "Handmade Violins & Violas — Plovdiv, Bulgaria",
         "Handmade violins and violas after Stradivari, Guarneri and Amati, made to order by luthier Stepan Demirdjian in Plovdiv, Bulgaria.",
     ),
     "services.html": (
-        "Violin Repair, Bow Rehair & Restoration — Luthier in Plovdiv, Bulgaria",
+        "Violin Repair & Bow Rehair — Plovdiv, Bulgaria",
         "Violin, viola and cello repair and restoration, bow rehairing and setup by luthier Stepan Demirdjian in Plovdiv, Bulgaria.",
     ),
 }
