@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Generate the English pages in en/ from the Bulgarian pages in the repo root.
+"""Generate the single-language pages from the bilingual sources in tools/src/.
 
-The root pages are the source: they hold both languages (.t-bg / .t-en spans)
-and are served in Bulgarian. This script copies each one to en/, switches it to
-English and fixes paths, canonical/og URLs, titles and descriptions.
+The sources hold both languages (.t-bg / .t-en spans). This script writes the
+Bulgarian pages to the repo root and the English pages to en/. Each output file
+contains only one language, so search engines see clean, separate pages.
 
-Run after every change to a root page:  python3 tools/build-en.py
+Edit the files in tools/src/, never the generated pages, then run:
+    python3 tools/build-en.py
 """
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SRC = ROOT / "tools" / "src"
 BASE = "https://bulgarian-violins.com/"
 
 EN = {
@@ -43,10 +45,75 @@ def sub1(pattern, repl, s, page):
     return s
 
 
+def keep_language(s, keep):
+    """Drop the spans of the other language and unwrap the spans of `keep` ("en" or "bg")."""
+    drop = "bg" if keep == "en" else "en"
+    tag = re.compile(r'<span class="t-(en|bg)">|<span\b|</span>')
+    out, i = [], 0
+    while True:
+        m = re.compile(r'<span class="t-(en|bg)">').search(s, i)
+        if not m:
+            out.append(s[i:])
+            break
+        out.append(s[i:m.start()])
+        depth, j = 1, m.end()
+        while depth:
+            t = tag.search(s, j)
+            if t.group(0) == "</span>":
+                depth -= 1
+            else:
+                depth += 1
+            j = t.end()
+        inner = s[m.end():t.start()]
+        if m.group(1) == keep:
+            out.append(inner)
+        i = j
+    return "".join(out)
+
+
+TEXT = {
+    "bg": [
+        ('>Skip to main content<', '>Към основното съдържание<'),
+        ('aria-label="Switch language / Смени езика"', 'aria-label="Превключи на английски"'),
+        ('alt="Stepan Demirdjian — home"', 'alt="Степан Демирджиян — начало"'),
+        ('alt="Handmade violin on blue silk"', 'alt="Ръчно изработена цигулка върху синя коприна"'),
+        ('alt="Violin, front view, isolated"', 'alt="Цигулка, изглед отпред"'),
+        ('alt="Stepan Demirdjian at the workbench"', 'alt="Степан Демирджиян на работната маса"'),
+        ('alt="Inspired by Stradivari, front"', 'alt="По модел на Страдивари, отпред"'),
+        ('alt="Inspired by Stradivari, scroll"', 'alt="По модел на Страдивари, главичка"'),
+        ('alt="Inspired by Stradivari, back"', 'alt="По модел на Страдивари, отзад"'),
+        ('alt="Inspired by Guarneri, front"', 'alt="По модел на Гуарнери, отпред"'),
+        ('alt="Inspired by Guarneri, back"', 'alt="По модел на Гуарнери, отзад"'),
+        ('alt="Viola 16 inch, front"', 'alt="Виола 16 инча, отпред"'),
+        ('alt="Viola 16 inch, back"', 'alt="Виола 16 инча, отзад"'),
+        ('alt="Viola 15.5 inch, front"', 'alt="Виола 15.5 инча, отпред"'),
+        ('alt="Viola 15.5 inch, back"', 'alt="Виола 15.5 инча, отзад"'),
+        ('alt="Close-up of a handmade violin scroll"', 'alt="Главичка на ръчно изработена цигулка отблизо"'),
+        ('aria-label="Previous testimonial"', 'aria-label="Предишен отзив"'),
+        ('aria-label="Next testimonial"', 'aria-label="Следващ отзив"'),
+        ('aria-label="Photo, full size"', 'aria-label="Снимка в пълен размер"'),
+        ('aria-label="Close"', 'aria-label="Затвори"'),
+        ('aria-label="Previous photo"', 'aria-label="Предишна снимка"'),
+        ('aria-label="Next photo"', 'aria-label="Следваща снимка"'),
+    ],
+    "en": [
+        ('aria-label="Switch language / Смени езика"', 'aria-label="Switch to Bulgarian"'),
+    ],
+}
+
+
+def build_bg(page):
+    s = keep_language((SRC / page).read_text(encoding="utf-8"), "bg")
+    for a, b in TEXT["bg"]:
+        s = s.replace(a, b)
+    (ROOT / page).write_text(s, encoding="utf-8")
+    print("wrote", page)
+
+
 def build(page):
     title, desc = EN[page]
     path = "" if page == "index.html" else page
-    s = (ROOT / page).read_text(encoding="utf-8")
+    s = (SRC / page).read_text(encoding="utf-8")
 
     s = sub1(r'<html lang="bg" data-lang="bg">', '<html lang="en" data-lang="en">', s, page)
     if HEAD_SCRIPT_BG not in s:
@@ -67,6 +134,11 @@ def build(page):
     s = s.replace('href="styles.css"', 'href="../styles.css"')
     s = s.replace("'photos/' +", "'../photos/' +")
 
+    s = re.sub(r'<meta name="keywords" content="[^"]*">\n', "", s)  # the keywords are Bulgarian
+    s = keep_language(s, "en")
+    for a, b in TEXT["en"]:
+        s = s.replace(a, b)
+
     out = ROOT / "en" / page
     out.parent.mkdir(exist_ok=True)
     out.write_text(s, encoding="utf-8")
@@ -75,4 +147,5 @@ def build(page):
 
 if __name__ == "__main__":
     for page in EN:
+        build_bg(page)
         build(page)

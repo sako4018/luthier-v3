@@ -1,23 +1,24 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="bg" data-lang="bg">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem('lang')==='bg')location.replace(location.pathname.replace(/^\/en(\/|$)/,'/')+location.search+location.hash)}catch(e){}</script>
+<script>try{if(localStorage.getItem('lang')==='en')location.replace('/en'+location.pathname+location.search+location.hash)}catch(e){}</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Stepan Demirdjian — Violin Maker, Plovdiv</title>
-<meta name="description" content="Handmade violins and violas by luthier Stepan Demirdjian in Plovdiv, Bulgaria. Instruments made to order, repair and restoration of string instruments.">
-<link rel="canonical" href="https://bulgarian-violins.com/en/">
+<title>Степан Демирджиян — лютиер в Пловдив</title>
+<meta name="description" content="Ръчно изработени цигулки и виоли от лютиер Степан Демирджиян, Пловдив. Изработка по поръчка, ремонт и реставрация на струнни инструменти.">
+<meta name="keywords" content="лютиер, лютиер Пловдив, цигулки Пловдив, цигулки България, виоли, violin maker Bulgaria">
+<link rel="canonical" href="https://bulgarian-violins.com/">
 <link rel="alternate" hreflang="bg" href="https://bulgarian-violins.com/">
 <link rel="alternate" hreflang="en" href="https://bulgarian-violins.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://bulgarian-violins.com/">
-<meta property="og:title" content="Stepan Demirdjian — Violin Maker, Plovdiv">
-<meta property="og:description" content="Handmade violins and violas by luthier Stepan Demirdjian in Plovdiv, Bulgaria. Instruments made to order, repair and restoration of string instruments.">
+<meta property="og:title" content="Степан Демирджиян — лютиер в Пловдив">
+<meta property="og:description" content="Ръчно изработени цигулки и виоли от лютиер Степан Демирджиян, Пловдив. Изработка по поръчка, ремонт и реставрация на струнни инструменти.">
 <meta property="og:image" content="https://bulgarian-violins.com/photos/brand/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:url" content="https://bulgarian-violins.com/en/">
+<meta property="og:url" content="https://bulgarian-violins.com/">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_GB">
+<meta property="og:locale" content="bg_BG">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="/photos/brand/favicon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/photos/brand/apple-touch-icon.png">
@@ -68,7 +69,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
 </head>
@@ -78,17 +79,17 @@
 
 <nav class="site-nav">
   <div class="nav-links left">
-    <a href="index.html#instruments">Instruments</a>
-    <a href="services.html">Services</a>
+    <a href="index.html#instruments"><span class="t-en">Instruments</span><span class="t-bg">Инструменти</span></a>
+    <a href="services.html"><span class="t-en">Services</span><span class="t-bg">Услуги</span></a>
   </div>
-  <a class="wordmark" href="index.html"><img src="../photos/brand/logo-white.png" alt="Stepan Demirdjian — home"></a>
+  <a class="wordmark" href="index.html"><img src="photos/brand/logo-white.png" alt="Stepan Demirdjian — home"></a>
   <div class="nav-links right">
-    <a href="index.html#contact-home">Contact</a>
-    <a href="index.html#testimonials">Testimonials</a>
+    <a href="index.html#contact-home"><span class="t-en">Contact</span><span class="t-bg">Контакти</span></a>
+    <a href="index.html#testimonials"><span class="t-en">Testimonials</span><span class="t-bg">Отзиви</span></a>
   </div>
-  <button type="button" class="lang-toggle" aria-label="Switch to Bulgarian">
-    <svg viewBox="0 0 3 2" width="20" height="14" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="0.667" width="3" height="0.667" fill="#00966E"/><rect y="1.333" width="3" height="0.667" fill="#D62612"/></svg>
-    
+  <button type="button" class="lang-toggle" aria-label="Switch language / Смени езика">
+    <span class="t-en"><svg viewBox="0 0 3 2" width="20" height="14" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect y="0.667" width="3" height="0.667" fill="#00966E"/><rect y="1.333" width="3" height="0.667" fill="#D62612"/></svg></span>
+    <span class="t-bg"><svg viewBox="0 0 60 30" width="20" height="14" aria-hidden="true"><rect width="60" height="30" fill="#00247d"/><path d="M0,0 60,30M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30M60,0 0,30" stroke="#cf142b" stroke-width="2"/><path d="M30,0V30M0,15H60" stroke="#fff" stroke-width="10"/><path d="M30,0V30M0,15H60" stroke="#cf142b" stroke-width="6"/></svg></span>
   </button>
 </nav>
 
@@ -96,64 +97,64 @@
 
 <section id="cinema" class="cinema">
   <div class="cinema-stage">
-    <img class="cinema-violin" id="cinemaViolin" src="../photos/brand/violin-cutout.webp" alt="Violin, front view, isolated">
+    <img class="cinema-violin" id="cinemaViolin" src="photos/brand/violin-cutout.webp" alt="Violin, front view, isolated">
   </div>
   <div class="cinema-title" id="cinemaTitle">
     <h1>Stepan Demirdjian</h1>
     <p class="cinema-name-bg">Степан Демирджиян</p>
-    <span>Violin Maker · Plovdiv</span>
+    <span><span class="t-en">Violin Maker · Plovdiv</span><span class="t-bg">Лютиер · Пловдив</span></span>
   </div>
-  <div class="cinema-scrollcue" id="cinemaScrollcue"><span>Scroll</span><i></i></div>
+  <div class="cinema-scrollcue" id="cinemaScrollcue"><span><span class="t-en">Scroll</span><span class="t-bg">Превъртете</span></span><i></i></div>
 </section>
 
 <section id="about" class="about-split">
-  <div class="ph"><img loading="lazy" decoding="async" src="../photos/workshop/at-the-bench.jpg" alt="Stepan Demirdjian at the workbench"></div>
+  <div class="ph"><img loading="lazy" decoding="async" src="photos/workshop/at-the-bench.jpg" alt="Stepan Demirdjian at the workbench"></div>
   <div class="txt">
     <div class="section-head" style="text-align:left">
-      <h2>About Me</h2>
+      <h2><span class="t-en">About Me</span><span class="t-bg">За мен</span></h2>
       <div class="divider" style="justify-content:flex-start"><span class="mark"></span><i></i></div>
     </div>
-    <p class="lede" style="margin-top:22px">Master luthier from Plovdiv, devoted to the classical tradition and the pursuit of perfect sound. Over thirty years of experience in making violins and violas, as well as in the complete restoration of bowed string instruments and their bows.</p>
+    <p class="lede" style="margin-top:22px"><span class="t-en">Master luthier from Plovdiv, devoted to the classical tradition and the pursuit of perfect sound. Over thirty years of experience in making violins and violas, as well as in the complete restoration of bowed string instruments and their bows.</span><span class="t-bg">Майстор-лютиер от Пловдив, посветен на класическата традиция и съвършения звук. С над трийсет години опит в изработката на цигулки и виоли, както и в цялостната реставрация на струнни лъкови инструменти и техните лъкове.</span></p>
     <div class="ctas">
-      <a class="btn primary" href="about.html">More about me</a>
-      <a class="btn ghost" href="instrument.html">See instruments</a>
+      <a class="btn primary" href="about.html"><span class="t-en">More about me</span><span class="t-bg">Повече за мен</span></a>
+      <a class="btn ghost" href="instrument.html"><span class="t-en">See instruments</span><span class="t-bg">Виж инструментите</span></a>
     </div>
   </div>
 </section>
 
 <section id="instruments" class="section inst-band">
   <div class="section-head">
-    <h2>Instruments</h2>
+    <h2><span class="t-en">Instruments</span><span class="t-bg">Инструменти</span></h2>
     <div class="divider"><i></i><span class="mark"></span><i></i></div>
   </div>
   <div class="inst-grid">
     <a class="inst-card" href="instrument.html?i=stradivari">
       <div class="pair">
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/stradivari/front.jpg" alt="Inspired by Stradivari, front"></div>
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/stradivari/back.jpg" alt="Inspired by Stradivari, back"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/stradivari/front.jpg" alt="Inspired by Stradivari, front"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/stradivari/back.jpg" alt="Inspired by Stradivari, back"></div>
       </div>
-      <div class="cap">Inspired by Stradivari, Stepan Demirdjian</div>
+      <div class="cap"><span class="t-en">Inspired by Stradivari, Stepan Demirdjian</span><span class="t-bg">По модел на Страдивари, Степан Демирджиян</span></div>
     </a>
     <a class="inst-card" href="instrument.html?i=guarneri">
       <div class="pair">
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/guarneri/front.jpg" alt="Inspired by Guarneri, front"></div>
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/guarneri/back.jpg" alt="Inspired by Guarneri, back"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/guarneri/front.jpg" alt="Inspired by Guarneri, front"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/guarneri/back.jpg" alt="Inspired by Guarneri, back"></div>
       </div>
-      <div class="cap">Inspired by Guarneri, Stepan Demirdjian</div>
+      <div class="cap"><span class="t-en">Inspired by Guarneri, Stepan Demirdjian</span><span class="t-bg">По модел на Гуарнери, Степан Демирджиян</span></div>
     </a>
     <a class="inst-card" href="instrument.html?i=viola-16">
       <div class="pair">
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/viola-16/front.jpg" alt="Viola 16 inch, front"></div>
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/viola-16/back.jpg" alt="Viola 16 inch, back"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/viola-16/front.jpg" alt="Viola 16 inch, front"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/viola-16/back.jpg" alt="Viola 16 inch, back"></div>
       </div>
-      <div class="cap">Viola 16&Prime;, Stepan Demirdjian</div>
+      <div class="cap"><span class="t-en">Viola 16&Prime;, Stepan Demirdjian</span><span class="t-bg">Виола 16&Prime;, Степан Демирджиян</span></div>
     </a>
     <a class="inst-card" href="instrument.html?i=viola-15-5">
       <div class="pair">
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/viola-15-5/front.jpg" alt="Viola 15.5 inch, front"></div>
-        <div class="ph"><img loading="lazy" decoding="async" src="../photos/viola-15-5/back.jpg" alt="Viola 15.5 inch, back"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/viola-15-5/front.jpg" alt="Viola 15.5 inch, front"></div>
+        <div class="ph"><img loading="lazy" decoding="async" src="photos/viola-15-5/back.jpg" alt="Viola 15.5 inch, back"></div>
       </div>
-      <div class="cap">Viola 15.5&Prime;, Stepan Demirdjian</div>
+      <div class="cap"><span class="t-en">Viola 15.5&Prime;, Stepan Demirdjian</span><span class="t-bg">Виола 15.5&Prime;, Степан Демирджиян</span></div>
     </a>
   </div>
 </section>
@@ -162,7 +163,7 @@
   <div class="quote-inner">
     <div id="quoteSlides">
       <div class="q-slide active">
-        <img class="quote-photo" src="../photos/testimonials/macdonald.jpg" alt="R.C. MacDonald" width="200" height="133" decoding="async">
+        <img class="quote-photo" src="photos/testimonials/macdonald.jpg" alt="R.C. MacDonald" width="200" height="133" decoding="async">
         <p class="quote-author-name">R.C. MacDonald</p>
         <span class="quote-author-role">Concertmaster, Fredericton Chamber Orchestra; Violist, Symphony New Brunswick, Canada</span>
         <blockquote>&ldquo;I am very happy to own two Demirdjian violas, one of 408&nbsp;mm and another of 420&nbsp;mm. Both are fine, responsive instruments which I have used in orchestral work and in chamber music. Stepan's craftsmanship is of the highest order, they are also beautiful to look at. Stepan is a delight to work with, even by email at long distance, and he does his best to fulfill all his clients' wishes.&rdquo;</blockquote>
@@ -195,17 +196,17 @@
   <div class="contact-grid">
     <div>
       <div class="section-head" style="text-align:left">
-        <h2 style="font-size:clamp(24px,3vw,32px)">Contact</h2>
+        <h2 style="font-size:clamp(24px,3vw,32px)"><span class="t-en">Contact</span><span class="t-bg">Контакти</span></h2>
         <div class="divider" style="justify-content:flex-start"><span class="mark"></span><i></i></div>
       </div>
-      <p class="lede" style="margin-top:22px">Every instrument is agreed by phone or email — whatever suits you.</p>
+      <p class="lede" style="margin-top:22px"><span class="t-en">Every instrument is agreed by phone or email — whatever suits you.</span><span class="t-bg">Всеки инструмент се договаря по телефон или имейл — както Ви е удобно.</span></p>
       <div class="ctas">
         <a class="btn primary" href="mailto:demirdjianviolins@gmail.com">demirdjianviolins@gmail.com</a>
         <a class="btn ghost" href="tel:+359898343582">+359 898 343 582</a>
       </div>
     </div>
     <div class="detail-list">
-      <div><b>Address</b><span>99 Ruski Blvd, 4000 Plovdiv, Bulgaria</span></div>
+      <div><b><span class="t-en">Address</span><span class="t-bg">Адрес</span></b><span>99 Ruski Blvd, 4000 Plovdiv, Bulgaria</span></div>
       <div><b>Instagram</b><a href="https://www.instagram.com/stepandemirdjian/" target="_blank" rel="noopener" style="color:var(--color-brand-secondary)">@stepandemirdjian</a></div>
       <div><b>Facebook</b><a href="https://www.facebook.com/stepan.demirdjian.9?locale=bg_BG" target="_blank" rel="noopener" style="color:var(--color-brand-secondary)">Stepan Demirdjian</a></div>
     </div>
@@ -217,29 +218,29 @@
 <footer class="site-footer">
   <div class="foot-grid shell">
     <div class="foot-brand">
-      <a class="wordmark" href="index.html"><img src="../photos/brand/logo-white.png" alt="Stepan Demirdjian — home"></a>
-      <span>Violin Maker · Plovdiv</span>
+      <a class="wordmark" href="index.html"><img src="photos/brand/logo-white.png" alt="Stepan Demirdjian — home"></a>
+      <span><span class="t-en">Violin Maker · Plovdiv</span><span class="t-bg">Лютиер · Пловдив</span></span>
     </div>
     <div class="foot-col">
-      <b>Contact</b>
+      <b><span class="t-en">Contact</span><span class="t-bg">Контакти</span></b>
       <a href="mailto:demirdjianviolins@gmail.com">demirdjianviolins@gmail.com</a>
       <a href="tel:+359898343582">+359 898 343 582</a>
     </div>
     <div class="foot-col">
-      <b>Site</b>
-      <a href="index.html">Home</a>
-      <a href="index.html#instruments">Instruments</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
+      <b><span class="t-en">Site</span><span class="t-bg">Сайт</span></b>
+      <a href="index.html"><span class="t-en">Home</span><span class="t-bg">Начало</span></a>
+      <a href="index.html#instruments"><span class="t-en">Instruments</span><span class="t-bg">Инструменти</span></a>
+      <a href="services.html"><span class="t-en">Services</span><span class="t-bg">Услуги</span></a>
+      <a href="about.html"><span class="t-en">About</span><span class="t-bg">За мен</span></a>
     </div>
     <div class="foot-col">
-      <b>Links</b>
-      <a href="index.html#contact-home">Contact</a>
-      <a href="index.html#testimonials">Testimonials</a>
+      <b><span class="t-en">Links</span><span class="t-bg">Връзки</span></b>
+      <a href="index.html#contact-home"><span class="t-en">Contact</span><span class="t-bg">Контакти</span></a>
+      <a href="index.html#testimonials"><span class="t-en">Testimonials</span><span class="t-bg">Отзиви</span></a>
     </div>
   </div>
   <div class="foot-bottom shell">
-    <span>© Stepan Demirdjian, Plovdiv</span>
+    <span><span class="t-en">© Stepan Demirdjian, Plovdiv</span><span class="t-bg">© Степан Демирджиян, Пловдив</span></span>
   </div>
 </footer>
 
