@@ -97,18 +97,7 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 .cinema-title h1{font:400 clamp(26px,4vw,42px)/1.15 var(--font-display);margin:0;letter-spacing:-.01em}
 .cinema-title span{display:block;font:500 11px/1 var(--font-ui);letter-spacing:.2em;text-transform:uppercase;color:#D69357;margin-top:16px}
 .cinema-title .cinema-name-bg{font:400 clamp(13px,1.4vw,16px)/1 var(--font-display);color:#A79F91;margin:6px 0 0;opacity:.85}
-.cinema-scrollcue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:#8A8478;font:500 10.5px/1 var(--font-ui);letter-spacing:.16em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
-.cinema-scrollcue i{width:3px;height:46px;border-radius:3px;background:rgba(214,147,87,.22);display:block;position:relative;overflow:hidden;animation:cue-glow .8s ease 2s forwards}
-.cinema-scrollcue::after{content:"";width:12px;height:12px;margin-top:-22px;border:solid rgba(214,147,87,.35);border-width:0 3px 3px 0;transform:rotate(45deg);animation:cue-glow .8s ease 2s forwards,cue-arrow .8s ease 2s forwards}
-/* If nobody has scrolled after 2s, the cue lights up and a highlight runs down the line.
-   Scrolling fades the whole cue out (GSAP), so it only ever shows to someone who is waiting. */
-.cinema-scrollcue{animation:cue-wake .8s ease 2s forwards}
-.cinema-scrollcue i::after{content:"";position:absolute;left:0;top:-45%;width:100%;height:45%;background:#D69357;animation:cue-drip 1.6s cubic-bezier(.6,0,.4,1) 2s infinite}
-@keyframes cue-wake{to{color:#F2EEE6;letter-spacing:.24em}}
-@keyframes cue-drip{to{top:100%}}
-@keyframes cue-glow{to{filter:drop-shadow(0 0 6px #D69357)}}
-@keyframes cue-arrow{to{border-color:#D69357}}
-@media (prefers-reduced-motion:reduce){ .cinema-scrollcue{display:none} .cinema-violin{transform:none} }
+@media (prefers-reduced-motion:reduce){ .cinema-violin{transform:none} }
 
 /* ---- About: full-bleed split, dark photo half / cream text half (marcpaquin.net bio section) ---- */
 .about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--amber-100)}
