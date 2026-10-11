@@ -91,7 +91,7 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 /* ---------------- CINEMA HERO ---------------- */
 /* Deliberately theme-independent — a fixed dark opener regardless of site theme. */
 .cinema{position:relative;height:100vh;height:100svh;min-height:520px;background:#0B0A09;overflow:hidden}
-.cinema-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.cinema-stage{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center}
 .cinema-violin{max-height:82vh;max-width:92vw;width:auto;height:auto;transform:scale(1.7);transform-origin:50% 46%;filter:drop-shadow(0 50px 90px rgba(0,0,0,.55));opacity:1;will-change:transform,opacity}
 .cinema-title{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);text-align:center;color:#F2EEE6;opacity:1;pointer-events:none;width:100%}
 .cinema-title h1{font:400 clamp(26px,4vw,42px)/1.15 var(--font-display);margin:0;letter-spacing:-.01em}
