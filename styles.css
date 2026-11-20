@@ -100,14 +100,14 @@ img.wordmark,.wordmark img{height:26px;width:auto;display:block}
 @media (prefers-reduced-motion:reduce){ .cinema-violin{transform:none} }
 
 /* ---- About: full-bleed split, dark photo half / cream text half (marcpaquin.net bio section) ---- */
-.about-split{display:grid;grid-template-columns:1fr 1fr;min-height:560px;background:var(--amber-100)}
+.about-split{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--amber-100)}
 :root:not([data-theme="light"]) .about-split,:root[data-theme="dark"] .about-split{background:#241E14}
-.about-split .ph{background:#0B0A09;display:flex;align-items:center;justify-content:center;padding:clamp(12px,2vw,28px)}
-.about-split .ph img{max-width:min(100%,480px);max-height:min(90vh,640px);width:auto;height:auto;border-radius:4px}
+.about-split .ph{background:#0B0A09;position:relative;overflow:hidden;min-height:320px}
+.about-split .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .about-split .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,6vw,80px)}
 .about-split .lede{font-size:clamp(15px,1.5vw,17px);line-height:1.5;color:var(--color-text-secondary);max-width:62ch;margin:0 0 16px;text-wrap:balance}
 .about-split .ctas{display:flex;flex-wrap:wrap;gap:14px}
-@media (max-width:760px){ .about-split{grid-template-columns:1fr} }
+@media (max-width:760px){ .about-split{grid-template-columns:1fr} .about-split .ph{aspect-ratio:4/3;min-height:0} }
 
 /* ---- Page banner: narrow full-bleed photo strip as a page header ---- */
 .page-banner{height:clamp(110px,15vh,160px);overflow:hidden;background:#0B0A09;display:flex;justify-content:center}
